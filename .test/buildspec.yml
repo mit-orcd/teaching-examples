@@ -1,0 +1,14 @@
+buildspecs:
+  wordCount:
+    description: run the word count bash example
+    type: script
+    executor: 'engaging.slurm.sched_mit_orcd'
+    tags: ["queues","jobs"]
+    sbatch: ["-t 5", "-n 1"]
+    run: |
+      cd Python/word_count/Serial
+      bash submit_norm.sh
+      echo $?`
+
+
+
