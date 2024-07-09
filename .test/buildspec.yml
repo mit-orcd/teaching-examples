@@ -8,7 +8,7 @@ buildspecs:
     run: |
       cd Python/word_count/Serial
       bash submit_norm.sh
-      echo $?`
+      echo $?
 
 
 
