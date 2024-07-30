@@ -11,5 +11,5 @@ module load julia/1.9.1
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 echo "Number of Tasks: " $SLURM_ARRAY_TASK_COUNT
 
-cd ../Julia/word_count/JobArray
+cd ../../../../Julia/word_count/JobArray
 julia top5each.jl $SLURM_ARRAY_TASK_ID $SLURM_ARRAY_TASK_COUNT
