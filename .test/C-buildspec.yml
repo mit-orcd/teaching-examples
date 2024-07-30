@@ -1,6 +1,6 @@
 buildspecs:
   folder:
-    description: "Test all scripts in the scripts folder"
+    description: "Test all scripts in the C-Cpp Script Folder"
     type: script
     executor: 'engaging.slurm.sched_mit_orcd'
     tags: ["queues", "jobs"]
