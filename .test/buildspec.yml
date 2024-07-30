@@ -1,14 +1,33 @@
 buildspecs:
-  wordCount:
-    description: run the word count bash example
+  folder:
+    description: "Test all scripts in the scripts folder"
     type: script
     executor: 'engaging.slurm.sched_mit_orcd'
-    tags: ["queues","jobs"]
+    tags: ["queues", "jobs"]
     sbatch: ["-t 5", "-n 1"]
+    shell: csh
+    vars:
+      script_dir: "$HOME/buildtest/teaching-examples/.test/C-Cpp/Fibonacci"
     run: |
-      cd Python/word_count/Serial
-      bash submit_norm.sh
-      echo $?
-
-
-
+      if (! -d $script_dir) then
+        echo "$script_dir directory not found"
+        exit 1
+      else
+        echo "$script_dir directory found"
+        # Find all .sh files in the script directory and subdirectories
+        find $script_dir -type f -name "*.sh" | while read -r job_file; do
+          echo "Found script: $job_file"
+          set script_path=`dirname $job_file`
+          cd $script_path
+          echo "Running $job_file with bash in directory $script_path..."
+          bash `basename $job_file` > output.log
+          if ($status != 0) then
+            echo "Failed to run $job_file"
+            exit 1
+          else
+            echo "Output of $job_file"
+            cat output.log
+            rm output.log
+          endif
+        end
+      endif
