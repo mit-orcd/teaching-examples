@@ -7,4 +7,4 @@ module load anaconda3/2022.05-x86_64
 INPUT_FILE=../data/fibonacci/inputFile_10
 
 # Run the Wrapper Script
-python wrapper.py $INPUT_FILE
+python ../C-Cpp/Fibonacci/Serial/wrapper.py $INPUT_FILE
