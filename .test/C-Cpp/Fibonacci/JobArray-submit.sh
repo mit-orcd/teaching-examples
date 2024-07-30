@@ -8,7 +8,7 @@
 module load anaconda/2023a
 
 # Specify Input File
-INPUT_FILE=../../../data/fibonacci/inputFile_200
+INPUT_FILE=../data/fibonacci/inputFile_200
 
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 echo "Number of Tasks: " $SLURM_ARRAY_TASK_COUNT
