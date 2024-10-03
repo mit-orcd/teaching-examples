@@ -5,8 +5,9 @@
 #SBATCH -n 4
 
 # Load Julia and MPI Modules
-module load julia/1.7.3
-module load mpi/openmpi-4.1.3
+module load julia/1.9.1 
+module load gcc/12.2.0-x86_64
+module load openmpi/4.1.4-pmi-cuda-ucx-x86_64
 
 # Call your script as you would from the command line
 mpirun julia top5norm_alltoall.jl

@@ -8,10 +8,10 @@
 
 # Load modules
 source /etc/profile
-module load anaconda/2023a
-module load mpi/openmpi-4.1.5
-module load cuda/11.6
-module load nccl/2.11.4-cuda11.6
+module load anaconda3/2022.05-x86_64 
+module load gcc/12.2.0-x86_64
+module load openmpi/4.1.4-pmi-cuda-ucx-x86_64
+module load cuda/12.1.0-x86_64module 
 
 # These flags tell MPI how to set up communication
 export MPI_FLAGS="--tag-output --bind-to socket -map-by core -x PSM2_GPUDIRECT=1 -x NCCL_NET_GDR_LEVEL=5 -x NCCL_P2P_LEVEL=5 -x NCCL_NET_GDR_READ=1"
