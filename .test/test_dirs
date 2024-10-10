@@ -1,0 +1,3 @@
+teaching-examples/Python/word_count/Serial
+teaching-examples/Python/word_count/Parallel/mpi4py
+teaching-examples/Python/pytorch/Distributed
