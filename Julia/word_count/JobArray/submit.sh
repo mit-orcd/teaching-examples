@@ -7,7 +7,7 @@
 # run with: sbatch submit.sh
 
 # Load Julia Module
-module load julia/1.9.1
+module load julia/1.10.4
 
 echo "My SLURM_ARRAY_TASK_ID: " $SLURM_ARRAY_TASK_ID
 echo "Number of Tasks: " $SLURM_ARRAY_TASK_COUNT
