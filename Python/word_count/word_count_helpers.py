@@ -60,7 +60,7 @@ def cleantext(text):
     
     # Remove punctuation and extra whitespace
     text = " ".join(filter(lambda line : line != '\r\n', text))
-    text = re.sub('\s+', ' ', re.sub(r'[^\w\s]', ' ', text)).lower()
+    text = re.sub(r'\s+', ' ', re.sub(r'[^\w\s]', ' ', text)).lower()
     
     # Remove stopwords
     for w in stopwords:
